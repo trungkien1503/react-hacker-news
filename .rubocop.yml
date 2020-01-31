@@ -1,0 +1,15 @@
+require: rubocop-rails
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*.rb
+    - config/**/*.rb
+    - bin/*
+    - test/test_helper.rb
+    - node_modules/**/*
+Layout/LineLength:
+  Max: 100
+Style/Documentation:
+  Enabled: False
+Naming/HeredocDelimiterNaming:
+  Enabled: False

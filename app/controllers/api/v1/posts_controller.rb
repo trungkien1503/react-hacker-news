@@ -8,7 +8,8 @@ module Api
       end
 
       def show
-        render json: Post.find(params[:id])
+        post = Post.find_or_create_by(post_id: params[:id])
+        render json: post.crawl_data
       end
     end
   end

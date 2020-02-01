@@ -1,28 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import {
   HashRouter as Router,
   Route
 } from 'react-router-dom';
-import PostListTutorial from './components/PostListTutorial';
 import './App.css';
+import './styles/story.css';
 
 import Stories from './containers/Stories';
-import Posts from './containers/Posts';
+import Story from './containers/Story';
+import Header from './components/header';
 import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <br></br>
-        <Container>
-          <Route exact path="/" component={Stories} />
-          <Route exact path="/posts" component={Posts} />
-        </Container>
-
-      </div>
+      <Header/>
+      <Container>
+        <Route exact path="/" component={Stories} />
+        <Route exact path="/stories/:id" component={Story} />
+      </Container>
     </Router>
   );
 }

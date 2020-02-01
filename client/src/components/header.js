@@ -1,14 +1,16 @@
 import React from 'react';
 import logo from '../logo.svg';
+import { Link } from 'react-router-dom';
 
 export default function header(props) {
   return (
-    <div>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="container">
+      <header className="app-header">
+        <Link to='/' className="text-center story-link">
+          <img src={logo} className="app-logo" alt="logo" />
 
-        <p>Welcome to News Feed from Hacker News.</p>
-
+          <h1 class="header-title h4">Hacker News</h1>
+        </Link>
       </header>
     </div>
   )

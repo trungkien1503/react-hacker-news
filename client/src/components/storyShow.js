@@ -2,26 +2,18 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 
 export default function StoryShow(props) {
-
-  if (props.story.time) {
-    let storyTime = new Date(props.story.time * 1000);
-    let timeString = storyTime.toLocaleString();
-
+  if (props.loading) {
     return (
-      <Card body>
-        <Card.Header>{props.story.title}</Card.Header>
-        <Card.Text>{props.story.text}</Card.Text>
-        <Card.Footer>Published at: {timeString}</Card.Footer>
-      </Card>
+      <div> {"...Story Loading"} </div>
     )
-  } else {
-    let timeString = "Time is not available";
-
+  }
+  else {
+    const story = props.story;
     return (
-      <div>
-        <h4>{props.story.title}</h4>
-        <p>{props.story.text}</p>
-        <p>Time: {timeString}</p>
+      <div className="text-left story-content">
+        <img src={story.cover_image_url} className="img-fluid cover"/>
+        <h2 className="story-title">{story.title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: story.content }}/>
       </div>
     )
   }

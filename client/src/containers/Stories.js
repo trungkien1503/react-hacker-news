@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
-import Card from 'react-bootstrap/Card';
-import Header from '../components/header';
 
 class Stories extends Component {
 
@@ -15,18 +13,23 @@ class Stories extends Component {
   render() {
     const list = this.props.stories.map((story, index) => {
       return (
-        <li key={index}>
-          <Card body>
-            <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
-          </Card>
-        </li>
+        <div className="col-xs-6 col-sm-3" key={index}>
+          <Link to={`stories/${story.id}`} className="story-link">
+            <div className="card iwa-card mb-10">
+              <div className="card-body">
+                <h6 className="card-title">{story.title}</h6>
+                <div className="card-subtitle mb-10 small">{story.domain}</div>
+                <img src={story.cover_image_url} className="img-fluid img-thumbnail card-img-top mb-10"/>
+                <div className="text-card-footer text-muted">{story.score} points by {story.by} {story.time_ago} ago | {story.descendants} comments</div>
+              </div>
+            </div>
+          </Link>
+        </div>
       )
     })
 
     return (
-      <div>
-        <StoriesList list={list} loading={this.props.loading} />
-      </div>
+      <StoriesList list={list} loading={this.props.loading} />
     )
   }
 }

@@ -1,4 +1,4 @@
-const apiURL = 'http://localhost:3001';
+// const apiURL = 'http://localhost:3001';
 
 export function fetchStories() {
   return (dispatch) => {
@@ -10,7 +10,7 @@ export function fetchStories() {
         storyIds.map(function(id) {
           return (
             // fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
-            fetch(`${apiURL}/api/v1/posts/${id}.json`)
+            fetch(`/api/v1/posts/${id}.json`)
             .then(response => response.json())
             .then(story => {
               dispatch({type: 'FETCHING_STORIES', payload: story})

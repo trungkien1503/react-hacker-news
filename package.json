@@ -1,6 +1,7 @@
 {
   "name": "news-reader",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.7",
@@ -18,5 +19,10 @@
   "devDependencies": {
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
   }
 }

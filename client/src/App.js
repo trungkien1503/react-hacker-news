@@ -8,7 +8,6 @@ import PostListTutorial from './components/PostListTutorial';
 import './App.css';
 
 import Stories from './containers/Stories';
-import Navbar from './components/navbar';
 import Posts from './containers/Posts';
 import Container from 'react-bootstrap/Container';
 

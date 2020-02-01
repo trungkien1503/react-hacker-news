@@ -22,13 +22,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'webpacker'
+gem 'webpacker', '~> 4.2.2'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -43,14 +40,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
-end
-
 group :production do
   gem 'pg'
 end
@@ -58,6 +47,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.10.7'
 gem 'ruby-readability', require: 'readability'
-gem 'slim-rails'
+gem 'slim-rails', '~> 3.2.0'
+gem 'rails_admin', '~> 2.0.1'

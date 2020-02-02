@@ -4,7 +4,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       def index
-        @posts = Post.page(page).per(per)
+        @posts = Post.order(id: :asc).page(page).per(per)
       end
 
       def show

@@ -5,25 +5,25 @@ To implement a better News Reader for Hacker News using Rails.
 1. Parse https://news.ycombinator.com/best to pull down the latest best news.
 2. Display the items in a custom layout that is more visual but still readable:
 
-[Image]
+  [Image]
 
-[Title]
+  [Title]
 
-[article excerpt...]
-
-
-[Image]
-
-[Title]
-
-[article excerpt...]
+  [article excerpt...]
 
 
-[Image]
+  [Image]
 
-[Title]
+  [Title]
 
-[article excerpt...]
+  [article excerpt...]
+
+
+  [Image]
+
+  [Title]
+
+  [article excerpt...]
 
 3. Clicking on an article will show a page with the simplified, readability version of the article: just the text, images. The content should be formatted for ease of reading, clean and nice.
 4. Deploy to Heroku or make it publically accessible for review purposes

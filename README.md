@@ -31,4 +31,12 @@ To implement a better News Reader for Hacker News using Rails.
 1. Fully responsive for mobile view.
 2. Use ajax to pull the content of the page.
 3. Use HTML5 pushstate to manage the history
-4. Impress us with your front-end skills and your attention to design and user experience. 5. Implement CI integration.
+4. Impress us with your front-end skills and your attention to design and user experience.
+5. Implement CI integration.
+
+
+## What I Did
+The solution I did is building API application with RoR as web server on this repository:
+https://github.com/trungkien1503/react-hacker-news
+
+And for front-end I build a react-js app: https://github.com/trungkien1503/react-hacker-news-reader

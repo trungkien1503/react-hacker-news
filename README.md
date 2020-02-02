@@ -40,3 +40,25 @@ The solution I did is building API application with RoR as web server on this re
 https://github.com/trungkien1503/react-hacker-news
 
 And for front-end I build a react-js app: https://github.com/trungkien1503/react-hacker-news-reader
+
+## How to use
+
+### Back-end as API web service
+1. git clone `https://github.com/trungkien1503/react-hacker-news`
+2. cd `to your project folder`
+3. run `bundle install` to install missing gems
+4. run `spring rails s -p 3001` because our front-end react app run on port `3000`
+5. Open `localhost:3001` to see the admin page
+6. The api url example like `localhost:3001/api/v1/posts/:id.json`
+
+## Front-end: react js app 
+- git clone `https://github.com/trungkien1503/react-hacker-news-reader`
+- cd `to your project folder`
+- Run `npm install`
+- Then `npm start`
+- Open `localhost:3000` by default to access the local development
+
+## Deployment
+Deploy to heroku (also include CI between github and heroku):
+- Back-end API: https://iwa-hacker-news.herokuapp.com/
+- Front-end or as end user: https://iwa-hacker-news-fr.herokuapp.com/

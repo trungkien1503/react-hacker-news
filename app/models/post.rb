@@ -45,8 +45,7 @@ class Post < ApplicationRecord
   end
 
   def get_cover_image(page)
-    cover_image_url = (page.css("meta[property='og:image']").first || {})['content']
-    cover_image_url || ActionController::Base.helpers.asset_url('default.png')
+    cover_image_url || (page.css("meta[property='og:image']").first || {})['content']
   end
 
   def get_content(source)

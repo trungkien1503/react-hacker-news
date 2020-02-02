@@ -14,11 +14,14 @@ ActiveRecord::Schema.define(version: 2020_01_31_014531) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "post_id"
-    t.text "content"
-    t.string "cover_image_url"
     t.string "domain"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "by"
+    t.integer "score"
+    t.string "title"
+    t.string "time_ago"
+    t.string "cover_image_url"
+    t.text "content"
+    t.integer "descendants"
   end
 
 end

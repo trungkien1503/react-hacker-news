@@ -4,12 +4,21 @@ module Api
   module V1
     class PostsController < ApplicationController
       def index
-        render json: Post.all
+        @posts = Post.page(page).per(per)
       end
 
       def show
-        post = Post.find_or_create_by(post_id: params[:id])
-        render json: post.crawl_data
+        @post = Post.find_by(post_id: params[:id])
+      end
+
+      private
+
+      def page
+        params[:page] || 1
+      end
+
+      def per
+        params[:per] || 32
       end
     end
   end

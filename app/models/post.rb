@@ -13,12 +13,13 @@ class Post < ApplicationRecord
     domain ||= get_domain(story_data['url'])
     get_content_data(story_data['url'], domain)
     time_ago = time_ago_in_words(Time.zone.at(story_data['time']))
-    JSON.pretty_generate(story_data.merge(
-                           domain: domain,
-                           cover_image_url: cover_image_url,
-                           time_ago: time_ago,
-                           content: content
-                         ))
+    story_data.merge!(
+      domain: domain,
+      cover_image_url: cover_image_url,
+      time_ago: time_ago,
+      content: content
+    )
+    JSON.pretty_generate(story_data)
   end
 
   private

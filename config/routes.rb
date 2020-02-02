@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show]
     end
   end
+
+  root to: 'rails_admin/main#dashboard'
 end

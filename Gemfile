@@ -48,7 +48,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'nokogiri', '~> 1.10.7'
+gem 'rack-cors', require: 'rack/cors'
+gem 'rails_admin', '~> 2.0.1'
 gem 'ruby-readability', require: 'readability'
 gem 'slim-rails', '~> 3.2.0'
-gem 'rails_admin', '~> 2.0.1'
-gem 'rack-cors', '~> 1.1.1'

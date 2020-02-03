@@ -18,7 +18,7 @@ module Api
       end
 
       def per
-        params[:per] || 32
+        params[:per] || 20
       end
     end
   end

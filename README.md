@@ -52,6 +52,10 @@ https://github.com/trungkien1503/react-hacker-news
 
 And for front-end I build a react-js app: https://github.com/trungkien1503/react-hacker-news-reader
 
+## Demo
+- End user: https://iwa-hacker-news-fr.herokuapp.com
+- Admin site: https://iwa-hacker-news.herokuapp.com/
+
 ## How to use
 
 ### Back-end as API web service
@@ -66,6 +70,7 @@ And for front-end I build a react-js app: https://github.com/trungkien1503/react
 - git clone `https://github.com/trungkien1503/react-hacker-news-reader`
 - cd `to your project folder`
 - Run `npm install`
+- change API_URL in `src/config.js`
 - Then `npm start`
 - Open `localhost:3000` by default to access the local development
 
@@ -73,3 +78,11 @@ And for front-end I build a react-js app: https://github.com/trungkien1503/react
 Deploy to heroku (also include CI between github and heroku):
 - Back-end API: https://iwa-hacker-news.herokuapp.com/
 - Front-end or as end user: https://iwa-hacker-news-fr.herokuapp.com/
+
+## Crawl data
+- Scheduler update by heroku every 10 minutes or 1 hour
+
+## Next ideas
+- Update loadmore by https://www.npmjs.com/package/react-infinite-scroller
+- Add test cases
+... 

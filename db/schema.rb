@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_31_014531) do
     t.string "cover_image_url"
     t.text "content"
     t.integer "descendants"
+    t.integer "priority"
   end
 
 end

@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :cover_image_url
       t.text :content
       t.integer :descendants
+      t.integer :priority
     end
   end
 end

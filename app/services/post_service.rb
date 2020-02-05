@@ -10,16 +10,26 @@ class PostService
   def crawl_data
     list_post_ids = URI.parse('https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty&orderBy="$key"').read
     list_post_ids = JSON.parse(list_post_ids)
-    list_post_ids.each do |post_id|
-      json_content = URI.parse("https://hacker-news.firebaseio.com/v0/item/#{post_id}.json").read
-      story_data = JSON.parse(json_content)
-      handle_single_post(story_data, post_id)
+    list_post_ids.each_with_index do |post_id, index|
+      story_data = fetch_data(post_id)
+      next unless story_data
+      handle_single_post(story_data, post_id, index + 1)
     end
   end
 
   private
 
-  def handle_single_post(story_data, post_id)
+  def fetch_data(post_id)
+    begin
+      json_content = URI.parse("https://hacker-news.firebaseio.com/v0/item/#{post_id}.json").read
+      JSON.parse(json_content)
+    rescue StandardError
+      Rails.logger.error "Error fetching with post_id: #{post_id}"
+      nil
+    end
+  end
+
+  def handle_single_post(story_data, post_id, priority)
     post = Post.find_or_create_by(post_id: post_id)
     domain = get_domain(story_data['url'])
     time_ago = time_ago_in_words(Time.zone.at(story_data['time']))
@@ -28,7 +38,7 @@ class PostService
       cover_image_url, content = get_content_data(story_data['url'])
       post_params.merge!('cover_image_url' => cover_image_url, 'content' => content)
     end
-    post_params.merge!('domain' => domain, 'time_ago' => time_ago)
+    post_params.merge!('domain' => domain, 'time_ago' => time_ago, priority: priority)
     post.update(post_params)
   end
 
